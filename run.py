@@ -28,3 +28,8 @@ def startup_message():
 
 
 startup_message()
+
+
+
+OPPONENT_GRID = [[' '] * 5 for i in range(5)]
+USER_GRID = [[' '] * 5 for i in range(5)]
