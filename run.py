@@ -9,14 +9,11 @@ int_letters = {'A': 0, 'B': 1, 'C': 2, 'D': 3, 'E': 4}
 def startup_message():
     """ This is the welcome message """
     print(""" \u001b[34m
-(____  \   /\  (_______(_______| |     (_______)  | |  | |   | (_____(_____ \ 
+(____  \   /\  (_______(_______| |     (_______)  | |  | |   | (_____(_____ \
  ____)  ) /  \  _       _      | |      _____      \ \ | |__ | |  _   _____) )
-|  __  ( / /\ \| |     | |     | |     |  ___)      \ \|  __)| | | | |  ____/ 
-| |__)  | |__| | |_____| |_____| |_____| |_____ _____) | |   | |_| |_| |      
-|______/|______|\______)\______|_______|_______(______/|_|   |_(_____|_|      
-                                                                              
-                                                                                                                 
-    """)
+|  __  ( / /\ \| |     | |     | |     |  ___)      \ \|  __)| | | | |  ____/
+| |__)  | |__| | |_____| |_____| |_____| |_____ _____) | |   | |_| |_| |
+|______/|______|\______)\______|_______|_______(______/|_|   |_(_____|_|""")
     print("Welcome to Battleships")
     print("\u001b[35m_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_\u001b[0m")
     print("\u001b[35m+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_\u001b[0m")
@@ -26,7 +23,7 @@ def startup_message():
     print("\u001b[35m_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_\u001b[0m")
     print("\u001b[37m win, destroy all 5 enemy ships\u001b[0m")
     print("\u001b[35m_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_\u001b[0m")
-    print("\u001b[37mO=Miss \u001b[31mX=Hit\u001b[0m")
+    print("\u001b[32mO=Miss \u001b[31mX=Hit\u001b[0m")
     print("\u001b[35m_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_\u001b[0m")
 
 
@@ -46,7 +43,7 @@ def print_grid(grid):
 
 def spawn_ships(grid):
     """ This function spawns 5 ships in random locations across the grid and
-     marks them with an 'X' after importing randInt. 
+     marks them with an 'X' after importing randInt.
     It will pick a row and column and place a ship in that coordinate"""
     for ship in range(5):
         ship_row, ship_column = randint(0, 4), randint(0, 4)
@@ -75,7 +72,7 @@ def target():
 
 def hit_counter(grid):
     """ This function counts the amount of ships that have been hit
-     succesfully so that the game can end when all 
+     succesfully so that the game can end when all
      ships are hit. for loop simply looks for 'X'
     meaning hit and adds that to the count."""
     count = 0
@@ -87,8 +84,8 @@ def hit_counter(grid):
 
 
 if __name__ == "__main__":
-    """ if statement that displays the game. creates 'bombs' or lives 
-    which are used to tell if the user won or lost the game.""" 
+    """ if statement that displays the game. creates 'bombs' or lives
+which are used to tell if the user won or lost the game."""
     spawn_ships(OPPONENT_GRID)
     bombs = 15
     while bombs > 0:
@@ -103,11 +100,11 @@ if __name__ == "__main__":
             print("\u001b[32mYou sunk my battleship!\u001b[0m")
             print('\u001b[33m_______________________________________\u001b[0m')
             USER_GRID[row][column] = "X"
-            bombs -= 1  
+            bombs -= 1
         else:
             print("\u001b[31mMISS!\u001b[0m")
             USER_GRID[row][column] = "O"
-            bombs -= 1     
+            bombs -= 1
         if hit_counter(USER_GRID) == 5:
             print("\u001b[32mCongrats! You sunk my battleships.\u001b[0m")
             print('\u001b[33m_______________________________________\u001b[0m')
@@ -117,7 +114,6 @@ if __name__ == "__main__":
         if bombs == 0:
             print("\u001b[31mGame Over! You have been defeated.")
             print("""
-            
 ███▀▀▀██┼███▀▀▀███┼███▀█▄█▀███┼██▀▀▀
 ██┼┼┼┼██┼██┼┼┼┼┼██┼██┼┼┼█┼┼┼██┼██┼┼┼
 ██┼┼┼▄▄▄┼██▄▄▄▄▄██┼██┼┼┼▀┼┼┼██┼██▀▀▀
