@@ -19,11 +19,11 @@ First Time Goals
 
 On my first visit to the game I want to 
 
--be entertained by the game 
--see rules clearly displayed at the beginning 
--beat the game
--be visually stimulated by the game 
--be able to use the game without any errors
+- be entertained by the game 
+- see rules clearly displayed at the beginning 
+- beat the game
+- be visually stimulated by the game 
+- be able to use the game without any errors
 
 On my second visit I would like to defeat the game if I was unsuccessful the first time.
 
