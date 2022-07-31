@@ -1,6 +1,8 @@
+from random import randint
 import colorama 
 from colorama import Fore, Back
 colorama.init()
+
 
 OPPONENT_GRID = [[' '] * 5 for i in range(5)]
 USER_GRID = [[' '] * 5 for i in range(5)]
@@ -45,3 +47,12 @@ def print_grid(grid):
     print(Fore.RED + " ===========")
 
 
+def spawn_ships(grid):
+    """ This function spawns 5 ships in random locations across the grid and
+     marks them with an 'X' after importing randInt. 
+    It will pick a row and column and place a ship in that coordinate"""
+    for ship in range(5):
+        ship_row, ship_column = randint(0, 4), randint(0, 4)
+        while grid[ship_row][ship_column] == "X":
+            ship_row, ship_column = get_ship_spot()
+        grid[ship_row][ship_column] = "X"
