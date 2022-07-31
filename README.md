@@ -6,6 +6,10 @@ The player will see a blank grid or gameboard with the x and y axis labeled A-E 
 
 If the user takes out 5 enemy ships in less than 15 attempts then they are victorious. If the user runs out of bombs before taking out 5 ships they will lose.
 
+# Flowchart
+
+![bQ9gWuWCDJ](https://user-images.githubusercontent.com/103134533/182043570-150a0117-16ab-4663-abab-66974f167056.png)
+
 # Project Goals 
 
 The goal of this project is to create an entertaining and challenging game with a decent amount of replayability and to display the creator's understanding of python essentials. 
