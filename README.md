@@ -1,31 +1,67 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# How to Play
 
-Welcome darraghmurphy1,
+Battleship is a classic game traditionally played as a board game. This is a slightly manipulated version of the classic rules.
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+The player will see a blank grid or gameboard with the x and y axis labeled A-E and 1-5. The player will enter the coordinated they think an enemy ship is located and drop a bomb on that location. The user will have 15 attempts to take out 5 enemy battleships. If the user locates an enemy ship it will show up as "X" on the grid. If the user takes a shot and misses all enemy ships a "O" will be displayed on the grid. 
 
-## Reminders
+If the user takes out 5 enemy ships in less than 15 attempts then they are victorious. If the user runs out of bombs before taking out 5 ships they will lose.
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+# Project Goals 
 
-## Creating the Heroku app
+The goal of this project is to create an entertaining and challenging game with a decent amount of replayability and to display the creator's understanding of python essentials. 
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+User Goals:
+First Time Goals
 
-1. `heroku/python`
-2. `heroku/nodejs`
+On my first visit to the game I want to 
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+-be entertained by the game 
+-see rules clearly displayed at the beginning 
+-beat the game
+-be visually stimulated by the game 
+-be able to use the game without any errors
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+On my second visit I would like to defeat the game if I was unsuccessful the first time.
 
-Connect your GitHub repository and deploy as normal.
+If I was a repeat user I would like to see new features added to keep me stimulated. 
 
-## Constraints
+Features 
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
+Random ship generation and placement.
 
------
-Happy coding!
+Hidden grid with ships on it and displayed empty grid for guessing 
+
+Valiadation for input for coordinates 
+
+A counter to tell you how many ships are left 
+
+A counter to tell the user how many bombs are left 
+
+A success message 
+
+A defeat message 
+
+ASCII art 
+
+
+Deployment
+
+As was required by this project I had to deploy my project to Heroku. I done this by following these steps: 
+
+Push all code to GitHub
+Open Heroku
+Select new in the top right corner.
+Create new app.
+Enter the app name and select Europe as the region.
+Connect to GitHub.
+Search for repo-name.
+Select connect to the relevant repo you want to deploy.
+Select the settings tab.
+Add buildpack
+Select Python, then save changes.
+Select Nodejs, then save changes.
+Make sure Heroku/Python is at the top of the list, followed by Heroku/Nodejs
+Navigate to the deploy tab
+Scroll down to Manual Deploy and select deploy branch.
+Success
+
