@@ -77,8 +77,9 @@ def target():
 
 
 def hit_counter(grid):
-    """ This function counts the amount of ships that have been hit successfully so 
-    that the game can end when all ships are hit. for loop simply looks for 'X'
+    """ This function counts the amount of ships that have been hit
+     succesfully so that the game can end when all 
+     ships are hit. for loop simply looks for 'X'
     meaning hit and adds that to the count."""
     count = 0
     for row in grid:
@@ -87,3 +88,53 @@ def hit_counter(grid):
                 count += 1
     return count
 
+
+if __name__ == "__main__":
+    """ if statement that displays the game. creates 'bombs' or lives 
+    which are used to tell if the user won or lost the game.""" 
+    spawn_ships(OPPONENT_GRID)
+    bombs = 15
+    while bombs > 0:
+        print('____________________________________________')
+        print('Enter the co-ordinates you want to bomb')
+        print('____________________________________________')
+        print_grid(USER_GRID)
+        row, column = target()
+        if USER_GRID[row][column] == "O":
+            print("Location already hit")
+        elif OPPONENT_GRID[row][column] == "X":
+            print(Fore.GREEN + "You sunk my battleship!")
+            print('____________________________________________')
+            USER_GRID[row][column] = "X"
+            bombs -= 1  
+        else:
+            print(Fore.RED + "MISS! RELOAD!")
+            USER_GRID[row][column] = "O"
+            bombs -= 1     
+        if hit_counter(USER_GRID) == 5:
+            print(Fore.GREEN + "Congratultions! You sunk my battleships.")
+            print('____________________________________________')
+            break
+        print("You have " + str(bombs) + " bombs left")
+        print(Fore.WHITE + '____________________________________________')
+        if bombs == 0:
+            print(Fore.RED + "Game Over! You have been defeated.")
+            print("""
+            
+███▀▀▀██┼███▀▀▀███┼███▀█▄█▀███┼██▀▀▀
+██┼┼┼┼██┼██┼┼┼┼┼██┼██┼┼┼█┼┼┼██┼██┼┼┼
+██┼┼┼▄▄▄┼██▄▄▄▄▄██┼██┼┼┼▀┼┼┼██┼██▀▀▀
+██┼┼┼┼██┼██┼┼┼┼┼██┼██┼┼┼┼┼┼┼██┼██┼┼┼
+███▄▄▄██┼██┼┼┼┼┼██┼██┼┼┼┼┼┼┼██┼██▄▄▄
+┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼
+███▀▀▀███┼▀███┼┼██▀┼██▀▀▀┼██▀▀▀▀██▄┼
+██┼┼┼┼┼██┼┼┼██┼┼██┼┼██┼┼┼┼██┼┼┼┼┼██┼
+██┼┼┼┼┼██┼┼┼██┼┼██┼┼██▀▀▀┼██▄▄▄▄▄▀▀┼
+██┼┼┼┼┼██┼┼┼██┼┼█▀┼┼██┼┼┼┼██┼┼┼┼┼██┼
+███▄▄▄███┼┼┼─▀█▀┼┼─┼██▄▄▄┼██┼┼┼┼┼██▄
+
+            """)
+            print(Fore.WHITE + '____________________________________________')
+
+
+print(Back.GREEN + Fore.WHITE + "Thank you for playing.")
