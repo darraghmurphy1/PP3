@@ -75,3 +75,15 @@ def target():
         column = input("Enter a value A-E: ").upper()
     return int(row) - 1, int_letters[column]
 
+
+def hit_counter(grid):
+    """ This function counts the amount of ships that have been hit successfully so 
+    that the game can end when all ships are hit. for loop simply looks for 'X'
+    meaning hit and adds that to the count."""
+    count = 0
+    for row in grid:
+        for column in row:
+            if column == "X":
+                count += 1
+    return count
+
