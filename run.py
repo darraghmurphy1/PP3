@@ -1,14 +1,14 @@
 from random import randint
 
 
-OPPONENT_GRID = [['_'] * 5 for i in range(5)]
-USER_GRID = [['_'] * 5 for i in range(5)]
+OPPONENT_GRID = [[' '] * 5 for i in range(5)]
+USER_GRID = [[' '] * 5 for i in range(5)]
 int_letters = {'A': 0, 'B': 1, 'C': 2, 'D': 3, 'E': 4}
 
 
 def startup_message():
     """ This is the welcome message """
-    print("""
+    print(""" \u001b[34m
 (____  \   /\  (_______(_______| |     (_______)  | |  | |   | (_____(_____ \ 
  ____)  ) /  \  _       _      | |      _____      \ \ | |__ | |  _   _____) )
 |  __  ( / /\ \| |     | |     | |     |  ___)      \ \|  __)| | | | |  ____/ 
@@ -18,16 +18,16 @@ def startup_message():
                                                                                                                  
     """)
     print("Welcome to Battleships")
-    print("_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_")
-    print("+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_")
-    print("The aim of the game is to locate and bomb 5 ships")
-    print("_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_")
-    print("You have 15 bombs to do this")
-    print("_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_")
-    print("To win, destroy all 5 enemy ships")
-    print("_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_")
-    print("O=Miss X=Hit")
-    print("_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_")
+    print("\u001b[35m_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_\u001b[0m")
+    print("\u001b[35m+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_\u001b[0m")
+    print("\u001b[37mThe aim of the game is to find and bomb 5 ships\u001b[0m")
+    print("\u001b[35m_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_\u001b[0m")
+    print("\u001b[37mYou have 15 bombs to do this\u001b[0m")
+    print("\u001b[35m_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_\u001b[0m")
+    print("\u001b[37m win, destroy all 5 enemy ships\u001b[0m")
+    print("\u001b[35m_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_\u001b[0m")
+    print("\u001b[37mO=Miss \u001b[31mX=Hit\u001b[0m")
+    print("\u001b[35m_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_\u001b[0m")
 
 
 startup_message()
@@ -41,7 +41,7 @@ def print_grid(grid):
     for row in grid:
         print("%d|%s|" % (row_num, "|".join(row)))
         row_num += 1
-    print(" ===========")
+    print("\u001b[31m ===========\u001b[0m")
 
 
 def spawn_ships(grid):
@@ -61,15 +61,15 @@ def target():
     row = input("Enter the row you want to bomb: ")
     print('____________________________________________')
     while row not in ["1", "2", "3", "4", "5"]:
-        print('Please enter a valid co-ordinate')
+        print('\u001b[37mPlease enter a valid co-ordinate\u001b[0m')
         print('____________________________________________')
-        row = input("Enter a row 1-5: ")
-    column = input("Enter the column you want to bomb: ").upper()
+        row = input("\u001b[37mEnter a row 1-5: ")
+    column = input("\u001b[37mEnter column to bomb: \u001b[0m").upper()
     print('____________________________________________')
     while column not in ["A", "B", "C", "D", "E"]:
-        print('Please enter a a valid co-ordinate')
+        print('\u001b[37mPlease enter a a valid co-ordinate\u001b[0m')
         print('____________________________________________')
-        column = input("Enter a value A-E: ").upper()
+        column = input("\u001b[37mEnter a value A-E: \u001b[0m").upper()
     return int(row) - 1, int_letters[column]
 
 
@@ -92,30 +92,30 @@ if __name__ == "__main__":
     spawn_ships(OPPONENT_GRID)
     bombs = 15
     while bombs > 0:
-        print('____________________________________________')
-        print('Enter the co-ordinates you want to bomb')
-        print('____________________________________________')
+        print('\u001b[33m__________________________________________\u001b[0m')
+        print('Enter the co-ordinates you want to bomb\u001b[0m')
+        print('\u001b[33m__________________________________________\u001b[0m')
         print_grid(USER_GRID)
         row, column = target()
         if USER_GRID[row][column] == "O":
             print("Location already hit")
         elif OPPONENT_GRID[row][column] == "X":
-            print("You sunk my battleship!")
-            print('____________________________________________')
+            print("\u001b[32mYou sunk my battleship!\u001b[0m")
+            print('\u001b[33m_______________________________________\u001b[0m')
             USER_GRID[row][column] = "X"
             bombs -= 1  
         else:
-            print("MISS! RELOAD!")
+            print("\u001b[31mMISS!\u001b[0m")
             USER_GRID[row][column] = "O"
             bombs -= 1     
         if hit_counter(USER_GRID) == 5:
-            print("Congratultions! You sunk my battleships.")
-            print('____________________________________________')
+            print("\u001b[32mCongrats! You sunk my battleships.\u001b[0m")
+            print('\u001b[33m_______________________________________\u001b[0m')
             break
         print("You have " + str(bombs) + " bombs left")
-        print('____________________________________________')
+        print('\u001b[33m_______________________________________\u001b[0m')
         if bombs == 0:
-            print("Game Over! You have been defeated.")
+            print("\u001b[31mGame Over! You have been defeated.")
             print("""
             
 ███▀▀▀██┼███▀▀▀███┼███▀█▄█▀███┼██▀▀▀
