@@ -2,6 +2,8 @@ import colorama
 from colorama import Fore, Back
 colorama.init()
 
+int_letters = {'A': 0, 'B': 1, 'C': 2, 'D': 3, 'E': 4}
+
 
 def startup_message():
     """ This is the welcome message """
