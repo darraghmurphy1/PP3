@@ -85,7 +85,7 @@ After fixing these errors I recieved a success message.
 
 # Deployment
 
-As was required by this project I had to deploy my project to Heroku. I done this by following these steps: 
+## As was required by this project I had to deploy my project to Heroku. I done this by following these steps: 
 
 ### Push all code to GitHub
 ### Open Heroku
@@ -105,3 +105,11 @@ As was required by this project I had to deploy my project to Heroku. I done thi
 ### Scroll down to Manual Deploy and select deploy branch.
 ### Success
 
+# Credits 
+
+- My mentor Marcel Mulders 
+- Heroku 
+- GitHub
+- GitPod
+- Youtube. Specifically https://www.youtube.com/watch?v=tF1WRCrd_HQ
+- Code Institute 
