@@ -54,5 +54,24 @@ def spawn_ships(grid):
     for ship in range(5):
         ship_row, ship_column = randint(0, 4), randint(0, 4)
         while grid[ship_row][ship_column] == "X":
-            ship_row, ship_column = get_ship_spot()
+            ship_row, ship_column = target()
         grid[ship_row][ship_column] = "X"
+
+
+def target():
+    """ this function allows the user to target their desired coordinates
+    validation is used to make sure the coordinates are valid."""
+    row = input(Fore.BLUE + "Enter the row you want to bomb: ")
+    print('____________________________________________')
+    while row not in ["1", "2", "3", "4", "5"]:
+        print('Please enter a valid co-ordinate')
+        print('____________________________________________')
+        row = input("Enter a row 1-5: ")
+    column = input("Enter the column you want to bomb: ").upper()
+    print('____________________________________________')
+    while column not in ["A", "B", "C", "D", "E"]:
+        print('Please enter a a valid co-ordinate')
+        print('____________________________________________')
+        column = input("Enter a value A-E: ").upper()
+    return int(row) - 1, int_letters[column]
+
