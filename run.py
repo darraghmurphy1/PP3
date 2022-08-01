@@ -29,9 +29,6 @@ def startup_message():
     print("\u001b[35m_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_\u001b[0m")
 
 
-startup_message()
-
-
 def print_grid(grid):
     """the function called to print the playing board to the terminal"""
     print('  A B C D E')
@@ -85,11 +82,30 @@ def hit_counter(grid):
     return count
 
 
+def set_bombs():
+    """Function to return number of bombs"""
+    print("Please choose the difficulty level: ")
+    print("1) Easy")
+    print("2) Medium")
+    print("3) Hard")
+    difficulty = input()
+    while difficulty not in ["1", "2", "3"]:
+        print("Invalid input. Please choose 1, 2 or 3.")
+        difficulty = input()
+    if int(difficulty) == 1:
+        return 25
+    elif int(difficulty) == 2:
+        return 20
+    # default difficulty to hard
+    return 15
+
+
 if __name__ == "__main__":
     """ if statement that displays the game. creates 'bombs' or lives
 which are used to tell if the user won or lost the game."""
+    startup_message()
     spawn_ships(OPPONENT_GRID)
-    bombs = 15
+    bombs = set_bombs()
     while bombs > 0:
         print('\u001b[33m__________________________________________\u001b[0m')
         print('Enter the co-ordinates you want to bomb\u001b[0m')
@@ -130,6 +146,4 @@ which are used to tell if the user won or lost the game."""
 
             """)
             print('____________________________________________')
-
-
-print("Thank you for playing.")
+    print("Thank you for playing.")
