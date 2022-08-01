@@ -42,6 +42,11 @@ If I was a repeat user I would like to see new features added to keep me stimula
 
 ![chrome_h6YngRPR0t](https://user-images.githubusercontent.com/103134533/182042266-1c54ed32-9065-4bd1-adc8-4585919882b8.png)
 
+## Difficulty Levels
+
+![chrome_amQThUAnuV](https://user-images.githubusercontent.com/103134533/182248270-77ef9481-d3f0-48d8-857c-3899125a3881.png)
+
+
 ## Random ship generation and placement.
 
 ## Hidden grid with ships on it and displayed empty grid for guessing
@@ -85,7 +90,9 @@ To test the input validation I deliberately entered invalid data. A successful r
 
 This was a success. 
 
-The project was tested in Heroku as can be seen in the features section.
+The project was tested in Heroku as can be seen in the features section.#
+
+Also tested different difficulty levels successfully.
 
 
 # Validator Testing
