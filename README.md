@@ -76,6 +76,18 @@ If I was a repeat user I would like to see new features added to keep me stimula
 
 ![chrome_6AqSDGJKfq](https://user-images.githubusercontent.com/103134533/182042226-fefe8c75-772e-45b4-9b84-ee80c883e47f.png)
 
+# Testing 
+
+To test the input validation I deliberately entered invalid data. A successful result would be a prompt to the user to enter a valid option.
+
+![chrome_3qbAkYZXDm](https://user-images.githubusercontent.com/103134533/182204606-591273d3-03da-4bf6-aa7e-e5eac27fe026.png)
+![chrome_0Yb5fRBfgO](https://user-images.githubusercontent.com/103134533/182204632-3c3715b2-c70b-4c33-a119-3d3ad14af579.png)
+
+This was a success. 
+
+The project was tested in Heroku as can be seen in the features section.
+
+
 # Validator Testing
 
 I used Pep8 online validator to test my python code. 
@@ -93,23 +105,17 @@ After fixing these errors I recieved a success message.
 
 ## As was required by this project I had to deploy my project to Heroku. I done this by following these steps: 
 
-### Push all code to GitHub
-### Open Heroku
-### Select new in the top right corner.
-### Create new app.
-### Enter the app name and select Europe as the region.
-### Connect to GitHub.
-### Search for repo-name.
-### Select connect to the relevant repo you want to deploy.
-### Select the settings tab.
-### Add buildpack
-### Select Python, then save changes.
-### Select Nodejs, then save changes.
-### Make sure Heroku/Python is at the top of the list, followed by Heroku/Nodejs
-### Add config vars. Fill in PORT as the key and 8000 as the value.
-### Navigate to the deploy tab
-### Scroll down to Manual Deploy and select deploy branch.
-### Success
+- Commit and push final code to GitHub
+- Open Heroku
+- Open a new app in Heroku
+- Select a name for the app and select region as Europe
+- Add buildpacks to the app. Add Python and NodeJS in that order. Make sure Python is on top.
+- Add config vars. Fill in PORT as the key and 8000 as the value.
+- Go to Deploy tab 
+- Connect GitHub account and select repository
+- Manually deploy the main branch
+- Success
+
 
 # Credits 
 
