@@ -44,7 +44,7 @@ If I was a repeat user I would like to see new features added to keep me stimula
 
 ## Random ship generation and placement.
 
-## Hidden grid with ships on it and displayed empty grid for guessingf 
+## Hidden grid with ships on it and displayed empty grid for guessing
 
 
 ![chrome_5qvcerms2Z](https://user-images.githubusercontent.com/103134533/182042270-38a2d89a-8728-4c80-be62-6137ad3234e7.png)
@@ -105,16 +105,16 @@ After fixing these errors I recieved a success message.
 
 ## As was required by this project I had to deploy my project to Heroku. I done this by following these steps: 
 
-- Commit and push final code to GitHub
-- Open Heroku
-- Open a new app in Heroku
-- Select a name for the app and select region as Europe
-- Add buildpacks to the app. Add Python and NodeJS in that order. Make sure Python is on top.
-- Add config vars. Fill in PORT as the key and 8000 as the value.
-- Go to Deploy tab 
-- Connect GitHub account and select repository
-- Manually deploy the main branch
-- Success
+1. Commit and push final code to GitHub
+2. Open Heroku
+3. Open a new app in Heroku
+4. Select a name for the app and select region as Europe
+5. Add buildpacks to the app. Add Python and NodeJS in that order. Make sure Python is on top.
+6. Add config vars. Fill in PORT as the key and 8000 as the value.
+7. Go to Deploy tab 
+8. Connect GitHub account and select repository
+9. Manually deploy the main branch
+10. Success
 
 
 # Credits 
@@ -125,3 +125,4 @@ After fixing these errors I recieved a success message.
 - GitPod
 - Youtube. Specifically https://www.youtube.com/watch?v=tF1WRCrd_HQ
 - Code Institute 
+- Used random python import to select random integers
