@@ -2,7 +2,7 @@
 
 ![chrome_L6IUxkJtnP](https://user-images.githubusercontent.com/103134533/182044621-499146e0-fa9f-4bf3-872d-10501771f192.png)
 
-
+Live Version - https://pp3-battleship-22.herokuapp.com/
 
 # How to Play
 
